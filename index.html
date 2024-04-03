@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Take Notes App</title>
+	<link href="style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+</head>
+
+<body onload="loadNotes()">
+
+	<!-- NAVBAR -->
+
+	<nav class="navbar navbar-expand-lg bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Take Notes</a>
+			</div>
+		</div>
+	</nav>
+
+	
+
+
+	<!-- Create a Note here -->
+	<div class="row" style="--bs-gutter-x: 0rem !important ">
+		<div class="col-md-12 ">
+			<form method="GET" class="d-flex createNoteContainer">
+				<textarea class=" card text-bg-light w-50 createNote" id="writeNote" placeholder="Create a note..."
+					name="note"></textarea>
+				<button class="btn btn-outline-success align-self-end" type="button"
+					onclick='createNote()'>Submit</button>
+			</form>
+		</div>
+	</div>
+<!-- Notes added here -->
+	<div class="row" style="--bs-gutter-x: 0rem !important " id="notesResidence">
+
+	</div>
+
+	<!-- Modal -->
+	 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog odal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="alert alert-success alert-dismissable fade show">
+					<button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">&times;</button>
+					Note updated successfully.
+				</div>
+				<div class="alert alert-danger alert-dismissable fade show">
+					<button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true">&times;</button>
+					Note deleted.
+				</div>
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Note</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+
+				<div class="modal-body input">
+					<textarea id="modalText" class="w-100" style="min-height:150px"></textarea>
+				</div>
+
+				<div class="modal-footer d ">
+					<button id="deleteNote" type="button" class="btn btn-danger d-flex justify-content-start">Delete</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="updateNote" type="button" class="btn btn-primary" >Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+	<script src="script.js" ></script>
+</body>
+
+</html>
